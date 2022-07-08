@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
-import googleIconImg from '../assets/images/google-icon.svg';
+import illustrationImg from '../assets/illustration.svg';
+import logoImg from '../assets/logo.svg';
+import googleIconImg from '../assets/google-icon.svg';
 
 import { database } from '../services/firebase';
 
