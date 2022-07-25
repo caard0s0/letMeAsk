@@ -1,13 +1,16 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
 #page-room {
     header {
         padding: 24px;
-        border-bottom: 1px solid #e2e2e2; 
+        border-bottom: 1px solid ${props => props.theme.colors.gray.line}; 
 
         .content {
             max-width: 1120px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
     
             > img {
@@ -22,6 +25,7 @@
                     height: 40px;
                 }
             }
+
         }
     }
 
@@ -37,15 +41,15 @@
             h1 {
                 font-family: 'Poppins', sans-serif;
                 font-size: 24px;
-                color: #29292e;
+                color: ${props => props.theme.colors.textColor.primary};
             }
 
             span {
                 margin-left: 16px;
-                background: #e559f9;
+                background: ${props => props.theme.colors.pink.medium};
                 border-radius: 9999px;
                 padding: 8px 16px;
-                color: #FFF;
+                color: ${props => props.theme.colors.white.light};
                 font-weight: 500;
                 font-size: 14px;
             }
@@ -56,9 +60,10 @@
                 width: 100%;
                 border: 0;
                 padding: 16px;
-                border-radius: 8px;
-                background: #fefefe;
-                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                border-radius: 0px 8px 8px 8px;
+                background: ${props => props.theme.colors.background.question};
+                color: ${props => props.theme.colors.textColor.primary};
+                box-shadow: rgb(0 0 0 / 20%) 0px 0.1rem 0.4rem;
                 resize: vertical;
                 min-height: 130px;
             }
@@ -81,7 +86,7 @@
 
                     span {
                         margin-left: 8px;
-                        color: #29292e;
+                        color: ${props => props.theme.colors.textColor.details};;
                         font-weight: 500;
                         font-size: 14px;
                     }
@@ -89,13 +94,13 @@
 
                 > span {
                     font-size: 14px;
-                    color: #737380;
+                    color: ${props => props.theme.colors.gray.medium};
                     font-weight: 500;
 
                     button {
                         background: transparent;
                         border: 0;
-                        color: #835AFD;
+                        color: ${props => props.theme.colors.purple.light};
                         text-decoration: underline;
                         font-size: 14px;
                         font-weight: 500;
@@ -110,3 +115,4 @@
         }
     }
 }
+`

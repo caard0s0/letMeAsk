@@ -1,28 +1,32 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
 .question {
-    background: #fefefe;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    background: ${props => props.theme.colors.background.question};
+    border-radius: 0px 8px 8px 8px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0.1rem 0.4rem;
     padding: 24px;
+    margin-top: 1rem;
 
     & + .question {
         margin-top: 8px;
     }
     
     &.highlighted {
-        background: #F4F0FF ;
-        border: 1px solid #835AFD;
+        background: ${props => props.theme.colors.gray.line};
+        border: 1px solid ${props => props.theme.colors.background.secondary};
         
         footer .user-info span {
-            color: #29292E;
+            color: ${props => props.theme.colors.textColor.details};
         }
     }
 
     &.answered {
-        background: #DBDCDD;
+        background: ${props => props.theme.colors.gray.dark};
     }
     
     p {
-        color: #29292e;
+        color: ${props => props.theme.colors.textColor.primary};
     }
 
     footer {
@@ -43,7 +47,8 @@
 
             span {
                 margin-left: 8px;
-                color: #737380;
+                color: ${props => props.theme.colors.textColor.details};
+                font-weight: 500;
                 font-size: 14px;
             }
         }
@@ -62,14 +67,14 @@
             &.like-button {
                 display: flex;
                 align-items: flex-end;
-                color: #737380;
+                color: ${props => props.theme.colors.textColor.details};
                 gap: 8px;
 
                 &.liked {
-                    color: #835afd;
+                    color: ${props => props.theme.colors.purple.light};
 
                     svg path {
-                        stroke: #835afd;
+                        stroke: ${props => props.theme.colors.purple.light};
                     }
                 }
             }
@@ -80,3 +85,4 @@
         }
     }
 }
+`
