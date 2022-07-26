@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
 .question {
     background: ${props => props.theme.colors.background.question};
-    border-radius: 0px 8px 8px 8px;
+    border-radius: 0 0.8rem 0.8rem 0.8rem;
     box-shadow: rgb(0 0 0 / 20%) 0px 0.1rem 0.4rem;
-    padding: 24px;
-    margin-top: 1rem;
+    padding: 2.4rem;
+    margin-top: 1.4rem;
 
     & + .question {
-        margin-top: 8px;
+        margin-top: 0.8rem;
     }
     
     &.highlighted {
@@ -33,29 +33,29 @@ export const Container = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 24px;
+        margin-top: 2.4rem;
 
         .user-info {
             display: flex;
             align-items: center;
 
             img {
-                width: 32px;
-                height: 32px;
+                width: 3.2rem;
+                height: 3.2rem;
                 border-radius: 50%;
             }
 
             span {
-                margin-left: 8px;
+                margin-left: 0.8rem;
                 color: ${props => props.theme.colors.textColor.details};
                 font-weight: 500;
-                font-size: 14px;
+                font-size: 1.4rem;
             }
         }
 
         > div {
             display: flex;
-            gap: 16px;
+            gap: 1.6rem;
         }
 
         button {
@@ -68,7 +68,7 @@ export const Container = styled.div`
                 display: flex;
                 align-items: flex-end;
                 color: ${props => props.theme.colors.textColor.details};
-                gap: 8px;
+                gap: 0.8rem;
 
                 &.liked {
                     color: ${props => props.theme.colors.purple.light};

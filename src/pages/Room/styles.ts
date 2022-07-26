@@ -3,26 +3,26 @@ import styled from 'styled-components'
 export const Container = styled.div`
 #page-room {
     header {
-        padding: 24px;
+        padding: 2.4rem;
         border-bottom: 1px solid ${props => props.theme.colors.gray.line}; 
 
         .content {
-            max-width: 1120px;
+            max-width: 112rem;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
             align-items: center;
     
             > img {
-                max-height: 45px;
+                max-height: 4.5rem;
             }
 
             > div {
                 display: flex;
-                gap: 16px;
+                gap: 1.6rem;
 
                 button {
-                    height: 40px;
+                    height: 4rem;
                 }
             }
 
@@ -30,28 +30,28 @@ export const Container = styled.div`
     }
 
     main {
-        max-width: 800px;
+        max-width: 80rem;
         margin: 0 auto;
 
         .room-title {
-            margin: 32px 0 24px;
+            margin: 3.2rem 0 2.4rem;
             display: flex;
             align-items: center;
 
             h1 {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: 2.4rem;
                 color: ${props => props.theme.colors.textColor.primary};
             }
 
             span {
-                margin-left: 16px;
+                margin-left: 1.6rem;
                 background: ${props => props.theme.colors.pink.medium};
                 border-radius: 9999px;
-                padding: 8px 16px;
+                padding: 0.8rem 1.6rem;
                 color: ${props => props.theme.colors.white.light};
                 font-weight: 500;
-                font-size: 14px;
+                font-size: 1.4rem;
             }
         }
 
@@ -59,41 +59,41 @@ export const Container = styled.div`
             textarea {
                 width: 100%;
                 border: 0;
-                padding: 16px;
-                border-radius: 0px 8px 8px 8px;
+                padding: 1.6rem;
+                border-radius: 0 0.8rem 0.8rem 0.8rem;
                 background: ${props => props.theme.colors.background.question};
                 color: ${props => props.theme.colors.textColor.primary};
                 box-shadow: rgb(0 0 0 / 20%) 0px 0.1rem 0.4rem;
                 resize: vertical;
-                min-height: 130px;
+                min-height: 13rem;
             }
 
             .form-footer {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-top: 16px;
+                margin-top: 1.6rem;
 
                 .user-info {
                     display: flex;
                     align-items: center;
 
                     img {
-                        width: 32px;
-                        height: 32px;
+                        width: 3.2rem;
+                        height: 3.2rem;
                         border-radius: 50%;
                     }
 
                     span {
-                        margin-left: 8px;
+                        margin-left: 0.8rem;
                         color: ${props => props.theme.colors.textColor.details};;
                         font-weight: 500;
-                        font-size: 14px;
+                        font-size: 1.4rem;
                     }
                 }
 
                 > span {
-                    font-size: 14px;
+                    font-size: 1.4rem;
                     color: ${props => props.theme.colors.gray.medium};
                     font-weight: 500;
 
@@ -102,7 +102,7 @@ export const Container = styled.div`
                         border: 0;
                         color: ${props => props.theme.colors.purple.light};
                         text-decoration: underline;
-                        font-size: 14px;
+                        font-size: 1.4rem;
                         font-weight: 500;
                         cursor: pointer;
                     }
@@ -111,7 +111,7 @@ export const Container = styled.div`
         }
 
         .question-list {
-            margin-top: 32px;
+            margin-top: 3.2rem;
         }
     }
 }

@@ -9,9 +9,10 @@ import { database } from '../../services/firebase'
 import { useAuth } from '../../hooks/useAuth'
 
 import { Container } from './styles'
-import Switch from 'react-switch'
 import { ThemeContext } from 'styled-components'
 import { shade } from 'polished'
+
+import Switch from 'react-switch'
 
 interface Props {
     toggleTheme(): void;

@@ -6,9 +6,8 @@ import LogoImg from '../../assets/logo.svg'
 import googleIconImg from '../../assets/google-icon.svg'
 
 import { database } from '../../services/firebase'
-
-import { Button } from '../../components/Button'
 import { useAuth } from '../../hooks/useAuth'
+import { Button } from '../../components/Button'
 
 import { ThemeContext } from 'styled-components'
 import { Container } from './styles.'

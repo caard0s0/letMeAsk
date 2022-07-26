@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 .button {
-    height: 50px;
-    border-radius: 0 8px 8px 8px;
+    height: 5rem;
+    border-radius: 0 0.8rem 0.8rem 0.8rem;
     font-weight: 500;
     background: ${props => props.theme.colors.background.secondary};
     color: ${props => props.theme.colors.white.light};
-    padding: 0 32px;
+    padding: 0 3.2rem;
 
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@ export const Container = styled.div`
     transition: filter 0.2s;
 
     img {
-        margin-right: 8px;
+        margin-right: 0.8rem;
     }
 
     &.outlined {

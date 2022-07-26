@@ -13,10 +13,11 @@ import { useRoom } from '../../hooks/useRoom'
 import { database } from '../../services/firebase'
 
 import './styles'
-import Switch from 'react-switch'
 import { Container } from './styles'
 import { ThemeContext } from 'styled-components'
 import { shade } from 'polished'
+
+import Switch from 'react-switch'
 
 type RoomParams = {
     id: string;

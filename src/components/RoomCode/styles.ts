@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 .room-code {
-    height: 40px;
-    border-radius: 0 8px 8px 8px;
+    height: 4rem;
+    border-radius: 0 0.8rem 0.8rem 0.8rem;
     overflow: hidden;
 
     background: ${props => props.theme.colors.background.primary};
@@ -22,7 +22,7 @@ export const Container = styled.div`
 
     div {
         background: ${props => props.theme.colors.background.secondary};
-        padding: 9px 12px;
+        padding: 0.9rem 1.2rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,9 +32,9 @@ export const Container = styled.div`
         display: block;
         align-self: center;
         flex: 1;
-        padding: 0 16px 0 12px;
-        width: 240px;
-        font-size: 14px;
+        padding: 0 1.6rem 0 1.2rem;
+        width: 24rem;
+        font-size: 1.4rem;
         font-weight: 500;
     }
 }
