@@ -2,24 +2,24 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import { auth, firebase } from "../services/firebase";
 
 type User = {
-    id: string;
-    name: string;
-    avatar: string; 
-}
+  id: string;
+  name: string;
+  avatar: string; 
+};
 
 type AuthContextType = {
-    user: User | undefined;
-    signInWithGoogle: () => Promise<void>;
-}
+  user: User | undefined;
+  signInWithGoogle: () => Promise<void>;
+};
 
 type AuthContextProvider = {
-    children: ReactNode;
-}
+  children: ReactNode;
+};
 
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProvider) {
-    const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User>();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -60,12 +60,12 @@ export function AuthContextProvider(props: AuthContextProvider) {
         name: displayName,
         avatar: photoURL
       })
-    }
-  }
+    };
+  };
 
-    return (
-        <AuthContext.Provider value={{ user, signInWithGoogle }}>
-            {props.children}
-        </AuthContext.Provider>
-    );
-}
+  return (
+      <AuthContext.Provider value={{ user, signInWithGoogle }}>
+        {props.children}
+      </AuthContext.Provider>
+  );
+};

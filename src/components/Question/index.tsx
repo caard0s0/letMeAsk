@@ -13,7 +13,7 @@ type QuestionProps = {
     children?: ReactNode;
     isAnswered?: boolean;
     isHighLighted?: boolean;
-}
+};
 
 export function Question({
     content,
@@ -30,7 +30,7 @@ export function Question({
                     'question', 
                     { answered: isAnswered },
                     { highlighted: isHighLighted && !isAnswered },
-                    )}
+                )}
             >
 
                 <p>
@@ -57,4 +57,4 @@ export function Question({
             
         </Container>
     );
-}
+};

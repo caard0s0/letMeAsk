@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
 .room-code {
@@ -37,5 +37,4 @@ export const Container = styled.div`
         font-size: 1.4rem;
         font-weight: 500;
     }
-}
-`
+}`;

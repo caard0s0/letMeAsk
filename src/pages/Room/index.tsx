@@ -1,29 +1,29 @@
-import { FormEvent, useContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { FormEvent, useContext, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import logoImg from '../../assets/logo.svg'
+import logoImg from '../../assets/logo.svg';
 
-import { Button } from '../../components/Button'
-import { Question } from '../../components/Question'
-import { RoomCode } from '../../components/RoomCode'
-import { useAuth } from '../../hooks/useAuth'
-import { useRoom } from '../../hooks/useRoom'
-import { database } from '../../services/firebase'
+import { Button } from '../../components/Button';
+import { Question } from '../../components/Question';
+import { RoomCode } from '../../components/RoomCode';
+import { useAuth } from '../../hooks/useAuth';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
 
-import './styles'
-import { Container } from './styles'
-import { ThemeContext } from 'styled-components'
-import { shade } from 'polished'
+import './styles';
+import { Container } from './styles';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
-import Switch from 'react-switch'
+import Switch from 'react-switch';
 
 type RoomParams = {
     id: string;
-}
+};
 
 interface Props {
     toggleTheme(): void;
-}
+};
 
 export function Room({toggleTheme}: Props) {
     const { user } = useAuth();
@@ -31,9 +31,9 @@ export function Room({toggleTheme}: Props) {
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
 
-    const { title, questions } = useRoom(`${roomId}`)
+    const { title, questions } = useRoom(`${roomId}`);
 
-    const { colors, titleTheme } = useContext(ThemeContext)
+    const { colors, titleTheme } = useContext(ThemeContext);
     
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
@@ -59,7 +59,7 @@ export function Room({toggleTheme}: Props) {
         await database.ref(`rooms/${roomId}/questions`).push(question);
 
         setNewQuestion ('');
-    }
+    };
 
     async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
         if (likeId) {
@@ -69,7 +69,7 @@ export function Room({toggleTheme}: Props) {
                 authorId: user?.id,
             })
         }
-    }
+    };
 
     return(
         <Container>
@@ -187,4 +187,4 @@ export function Room({toggleTheme}: Props) {
 
         </Container>
     );
-}
+};

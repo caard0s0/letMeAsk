@@ -1,60 +1,60 @@
-import { FormEvent, useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { FormEvent, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import illustrationImg from '../../assets/illustration.svg'
-import LogoImg from '../../assets/logo.svg'
-import googleIconImg from '../../assets/google-icon.svg'
+import illustrationImg from '../../assets/illustration.svg';
+import LogoImg from '../../assets/logo.svg';
+import googleIconImg from '../../assets/google-icon.svg';
 
-import { database } from '../../services/firebase'
-import { useAuth } from '../../hooks/useAuth'
-import { Button } from '../../components/Button'
+import { database } from '../../services/firebase';
+import { useAuth } from '../../hooks/useAuth';
+import { Button } from '../../components/Button';
 
-import { ThemeContext } from 'styled-components'
-import { Container } from './styles.'
-import { shade } from 'polished'
+import { ThemeContext } from 'styled-components';
+import { Container } from './styles.';
+import { shade } from 'polished';
 
-import Switch from 'react-switch'
+import Switch from 'react-switch';
 
 interface Props {
     toggleTheme(): void;
-}
+};
 
 export function Home({toggleTheme}: Props) {
     const navigate = useNavigate();
     const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] = useState('');
 
-    const { colors, titleTheme } = useContext(ThemeContext)
+    const { colors, titleTheme } = useContext(ThemeContext);
     
     async function handleCreateRoom() {
         if (!user) {
             await signInWithGoogle()
-        }
+        };
 
         navigate('/rooms/new');
-    }
+    };
 
     async function handleJoinRoom(event: FormEvent) {
         event.preventDefault();
 
         if (roomCode.trim() === '') {
             return;
-        }
+        };
 
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
         if (!roomRef.exists()) {
             alert('Room does not exists.');
             return;
-        }
+        };
 
         if (roomRef.val().closedAt) {
             alert('Room already closed.');
             return;
-        }
+        };
 
         navigate(`/rooms/${roomCode}`);
-    }
+    };
 
     return (
         <Container>
@@ -131,5 +131,5 @@ export function Home({toggleTheme}: Props) {
             </div>
             
         </Container>
-    )
-}
+    );
+};

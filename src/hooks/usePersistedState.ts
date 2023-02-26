@@ -1,4 +1,4 @@
-import { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 type Response<T> = [
     T,
@@ -21,4 +21,4 @@ export function usePersistedState<T>(key: string, initialState: T): Response<T> 
     }, [key, state]);
 
     return [state, setState];
-}
+};

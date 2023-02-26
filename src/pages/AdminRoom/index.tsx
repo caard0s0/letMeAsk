@@ -1,40 +1,40 @@
-import { useContext } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import logoImg from '../../assets/logo.svg'
-import deleteImg from '../../assets/delete.svg'
-import checkImg from '../../assets/check.svg'
-import answerImg from '../../assets/answer.svg'
+import logoImg from '../../assets/logo.svg';
+import deleteImg from '../../assets/delete.svg';
+import checkImg from '../../assets/check.svg';
+import answerImg from '../../assets/answer.svg';
 
-import { Button } from '../../components/Button'
-import { Question } from '../../components/Question'
-import { RoomCode } from '../../components/RoomCode'
-import { useRoom } from '../../hooks/useRoom'
-import { database } from '../../services/firebase'
+import { Button } from '../../components/Button';
+import { Question } from '../../components/Question';
+import { RoomCode } from '../../components/RoomCode';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
 
-import './styles'
-import { Container } from './styles'
-import { ThemeContext } from 'styled-components'
-import { shade } from 'polished'
+import './styles';
+import { Container } from './styles';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
-import Switch from 'react-switch'
+import Switch from 'react-switch';
 
 type RoomParams = {
     id: string;
-}
+};
 
 interface Props {
     toggleTheme(): void;
-}
+};
 
 export function AdminRoom({toggleTheme}: Props) {
     const navigate = useNavigate();
     const params = useParams<RoomParams>();
     const roomId = params.id;
 
-    const { title, questions } = useRoom(`${roomId}`)
+    const { title, questions } = useRoom(`${roomId}`);
 
-    const { colors, titleTheme } = useContext(ThemeContext)
+    const { colors, titleTheme } = useContext(ThemeContext);
 
     async function handleEndRoom() {
        await database.ref(`rooms/${roomId}`).update({
@@ -42,25 +42,25 @@ export function AdminRoom({toggleTheme}: Props) {
         })
 
         navigate('/');
-    }
+    };
 
     async function handleDeleteQuestion(questionId: string) {
         if (window.confirm('Are you sure you want to close this room?')) {
             await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
-        }
-    }
+        };
+    };
 
     async function handleCheckQuestionAsAnswered(questionId: string) {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
             isAnswered: true,
-        })
-    }
+        });
+    };
 
     async function handleHighlightQuestion(questionId: string) {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
             isHighLighted: true,
-        })
-    }
+        });
+    };
 
     return(
         <Container>
@@ -161,4 +161,4 @@ export function AdminRoom({toggleTheme}: Props) {
             
         </Container>
     );
-}
+};

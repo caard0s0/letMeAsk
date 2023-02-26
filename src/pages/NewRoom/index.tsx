@@ -1,46 +1,46 @@
-import { FormEvent, useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { FormEvent, useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import illustrationImg from '../../assets/illustration.svg'
-import logoImg from '../../assets/logo.svg'
+import illustrationImg from '../../assets/illustration.svg';
+import logoImg from '../../assets/logo.svg';
 
-import { Button } from '../../components/Button'
-import { database } from '../../services/firebase'
-import { useAuth } from '../../hooks/useAuth'
+import { Button } from '../../components/Button';
+import { database } from '../../services/firebase';
+import { useAuth } from '../../hooks/useAuth';
 
-import { Container } from './styles'
-import { ThemeContext } from 'styled-components'
-import { shade } from 'polished'
+import { Container } from './styles';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
-import Switch from 'react-switch'
+import Switch from 'react-switch';
 
 interface Props {
     toggleTheme(): void;
-}
+};
 
 export function NewRoom({toggleTheme}: Props) {
     const { user } = useAuth()
     const navigate = useNavigate()
     const [newRoom, setNewRoom] = useState('');
 
-    const { colors, titleTheme } = useContext(ThemeContext)
+    const { colors, titleTheme } = useContext(ThemeContext);
 
     async function handleCreateRoom(event: FormEvent) {
         event.preventDefault();
 
         if (newRoom.trim() === '') {
             return;
-        }
+        };
 
         const roomRef = database.ref('rooms');
 
         const firebaseRoom = await roomRef.push({
             title: newRoom,
             authorId: user?.id,
-        })
+        });
 
         navigate(`/admin/rooms/${firebaseRoom.key}`)
-    }
+    };
 
     return (
         <Container>
@@ -111,5 +111,5 @@ export function NewRoom({toggleTheme}: Props) {
 
             </div>
         </Container>
-    )
-}
+    );
+};

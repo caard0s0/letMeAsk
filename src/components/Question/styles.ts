@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
 .question {
@@ -7,6 +7,7 @@ export const Container = styled.div`
     box-shadow: rgb(0 0 0 / 20%) 0px 0.1rem 0.4rem;
     padding: 2.4rem;
     margin-top: 1.4rem;
+    font-size: 2.4rem;
 
     & + .question {
         margin-top: 0.8rem;
@@ -84,5 +85,4 @@ export const Container = styled.div`
             }
         }
     }
-}
-`
+}`;

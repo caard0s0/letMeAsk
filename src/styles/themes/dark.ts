@@ -35,4 +35,4 @@ export default {
             medium: "#E559F9",
         }
     },
-}
+};

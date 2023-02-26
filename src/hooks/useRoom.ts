@@ -13,7 +13,7 @@ type FirebaseQuestions = Record<string, {
     likes: Record<string, {
         authorId: string;
     }>
-}>
+}>;
 
 type QuestionType = {
     id: string;
@@ -26,7 +26,7 @@ type QuestionType = {
     isHighLighted: boolean;
     likeCount: number;
     likeId: string | undefined;
-}
+};
 
 export function useRoom(roomId: string) {
     const { user } = useAuth();
@@ -61,5 +61,5 @@ export function useRoom(roomId: string) {
         }
     }, [roomId, user?.id]);
 
-    return { questions, title }
-}
+    return { questions, title };
+};

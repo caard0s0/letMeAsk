@@ -1,24 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { usePersistedState } from './hooks/usePersistedState'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { usePersistedState } from './hooks/usePersistedState';
 
-import { Home } from './pages/Home'
-import { NewRoom } from './pages/NewRoom'
-import { Room } from './pages/Room'
-import { AdminRoom } from './pages/AdminRoom'
+import { Home } from './pages/Home';
+import { NewRoom } from './pages/NewRoom';
+import { Room } from './pages/Room';
+import { AdminRoom } from './pages/AdminRoom';
 
-import GlobalStyle from './styles/global'
-import light from './styles/themes/light'
-import dark from './styles/themes/dark'
+import GlobalStyle from './styles/global';
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
 
-import { ThemeProvider, DefaultTheme } from 'styled-components'
-import { AuthContextProvider } from './contexts/AuthContext'
+import { ThemeProvider, DefaultTheme } from 'styled-components';
+import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark);
 
   const toggleTheme = () => {
     setTheme(theme.titleTheme === 'dark' ? light : dark)
-  }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -35,6 +35,6 @@ function App() {
       </BrowserRouter>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
